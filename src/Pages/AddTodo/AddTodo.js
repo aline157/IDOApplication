@@ -72,7 +72,6 @@ const AddTodo = () => {
       <MainScreen title="Add New Todo">
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       {loading && <Loading />}
-      {/* <div>{location.state.title}</div> */}
       <div>
         <Row className="profileContainer">
           <Col md={6}>
@@ -112,10 +111,6 @@ const AddTodo = () => {
                 <DatePicker selected={dueDate}
                   onChange={(date: Date) => setDueDate(date)} />
                 </Form.Group>
-                          
-                          
-                
-              
                 <br></br>
               <Button type="submit" varient="primary">
                 Add Todo

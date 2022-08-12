@@ -1,8 +1,6 @@
-// import React, { useEffect } from "react";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userimg from '../../Photos/avatar.png';
-// import welcomeimg from '../../Photos/welcomeback.svg';
 import welcomeimg from '../../Photos/photo.JPG';
 
 import {
@@ -14,20 +12,10 @@ import {
     
   NavDropdown,
 } from "react-bootstrap";
-// import { useDispatch, useSelector } from "react-redux";
 import {} from "react-router-dom";
-// import { logout } from "../actions/userActions";
 
 function Header(props) {
-//   const dispatch = useDispatch();
 
-//   const userLogin = useSelector((state) => state.userLogin);
-//   const { userInfo } = userLogin;
-
-//   const logoutHandler = () => {
-//     dispatch(logout());
-//   };
-    
 const [success, setSuccess] = useState(false);
 const navigate = useNavigate();
 
@@ -49,8 +37,6 @@ useEffect(() => {
     navigate("/profile");
 }
 
-//   useEffect(() => {}, [userInfo]);
-
   return (
     <Navbar collapseOnSelect expand="lg"  bg="primary" variant="dark">
         <img
@@ -60,7 +46,7 @@ useEffect(() => {
         height="80"
         style={{ marginRight: 10 }}
         />
-      {/* <Container> */}
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
@@ -91,9 +77,8 @@ useEffect(() => {
           <Nav>
             
               <>
-                {/* <Nav.Link >Aline</Nav.Link> */}
                 <NavDropdown
-                //   title={`${userInfo.name}`}
+                
                   title={localStorage.getItem('user-info')}
                   id="collasible-nav-dropdown"
                 >
@@ -113,8 +98,7 @@ useEffect(() => {
             
           </Nav>
               </Navbar.Collapse>
-              
-      {/* </Container> */}
+
     </Navbar>
   );
 }

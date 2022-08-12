@@ -17,16 +17,12 @@ const Card = (props) => {
         justifyContent : 'space-between'     
     };
     const current = new Date();
-    // const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
     const date = `${current.getMonth() + 1}/${current.getDate()}/${current.getFullYear()}`;
     const timeEnd = moment(props.dueDate);
     const startDate = moment(date);
     const estimate = parseInt(timeEnd.diff(startDate) / (3600000*24));
-
     const str = "days";
-    
-    
-    
+     
     return (
       <>
             <CCard style={{ width: '18rem' }}>
@@ -58,9 +54,7 @@ const Card = (props) => {
                             <CCardSubtitle className="mb-2 text-medium-emphasis" style={{ background: 'blue' }}>{props.importance}</CCardSubtitle>}
                         {props.importance == 'High' && 
                             <CCardSubtitle className="mb-2 text-medium-emphasis" style={{ background: 'red' }}>{props.importance}</CCardSubtitle>}
-                        
-                        {/* <CCardSubtitle className="mb-2 text-medium-emphasis" >{ props.importance}</CCardSubtitle> */}
-                        
+           
                     </div>
 
                     {(props.type=='To Do') &&
@@ -88,14 +82,7 @@ const Card = (props) => {
                         
                     </div>
                     }
-                    
-
-                    {/* <CCardText>
-                    
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </CCardText> */}
-                    {/* <CCardLink href="#" style={{color: red}}>Card link</CCardLink>
-                    <CCardLink href="#">Another link</CCardLink> */}
+                   
                 </CCardBody>
             </CCard>
             

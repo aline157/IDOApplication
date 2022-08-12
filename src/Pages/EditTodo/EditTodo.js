@@ -36,28 +36,9 @@ const [title, setTitle] = useState("");
         setCategory(location.state.category);
       setImportance(location.state.importance);
       setId(location.state.id)
-      // getApiData();
 
-        
     }, [])
   
-  // const getApiData = async () => {
-    
-  //   const payload = {
-  //     Id: id     
-  //   }
-  //   try {
-        
-  //     const response = await axios.post(GetId_URL, payload);
-  //     console.log(JSON.stringify(response?.data));
-  //        setTitle(response?.data.Title);
-  //       setCategory(response?.data.Category);
-  //     setImportance(location.state.importance);
-  //   }
-  //   catch {
-
-  //   }
-  // };
     
   const submitHandler = async (e) => {
     
@@ -100,7 +81,6 @@ const [title, setTitle] = useState("");
       <MainScreen title="Edit Todo">
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       {loading && <Loading />}
-      {/* <div>{location.state.title}</div> */}
       <div>
         <Row className="profileContainer">
           <Col md={6}>

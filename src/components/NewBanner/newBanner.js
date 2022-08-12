@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-//import Banner from "react-js-banner";
 import { Paper, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 

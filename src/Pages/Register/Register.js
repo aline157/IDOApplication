@@ -43,9 +43,7 @@ const handleSubmit =async (e)=>{
         setEmail('');
         setPwd1('');
         setPwd2('');
-        // setSuccess(true);
-        // response = await response.json()
-        // localStorage.setItem("user-info", payload.Email)
+     
         navigate("/")
     } catch (err) {
         if (!err?.response) {
@@ -65,9 +63,7 @@ const handleSubmit =async (e)=>{
             <div className="login-contain">
                 
                  <div className="left-side">
-                         {/* <div className="img-class">
-                              <img src={logo} id="img-id" alt="" />
-                          </div> */}
+                        
                     <div className="top-right">
                        <p>Already have an Account?
                       

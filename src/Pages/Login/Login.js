@@ -2,31 +2,21 @@ import { useRef, useState,  useContext , useEffect} from 'react';
 import AuthContext from "../../context/AuthProvider";
 import './Login.css';
 import {Link} from 'react-router-dom';
-// import logo from './logoPng.png';
-// import welcomeimg from '../../Photos/welcomeback.svg';
 import welcomeimg from '../../Photos/photo.JPG';
 import axios from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
-// import Loading from "../../components/Loading/Loading";
 const LOGIN_URL = 'User/login';
 
 
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
-    // const userRef = useRef();
     const errRef = useRef();
     const navigate = useNavigate();
 
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    
-    // const [success, setSuccess] = useState(false);
-
-    // useEffect(() => {
-    //     userRef.current.focus();
-    // }, [])
-
+ 
     useEffect(() => {
         setErrMsg('');
         
@@ -51,15 +41,10 @@ const Login = () => {
                 payload,
             );
             console.log(JSON.stringify(response?.data));
-            
-            //console.log(JSON.stringify(response));
-            // const accessToken = response?.data?.accessToken;
-            // const roles = response?.data?.roles;
+           
             setAuth({user, pwd});
             setUser('');
             setPwd('');
-            // setSuccess(true);
-            // response = await response.json()
             localStorage.setItem("user-info", payload.Email)
             navigate("/homePage")
         } catch (err) {
@@ -87,11 +72,9 @@ const Login = () => {
                 </div>
                 
                  <div className="right-side">
-                         {/* <div className="img-class">
-                              <img src={logo} id="img-id" alt="" />
-                          </div> */}
+                    
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    {/* {loading && <Loading />} */}
+                  
                         <form onSubmit={handleSubmit}>
                         <label htmlFor="emil1">Email</label>
                             <input placeholder="Enter your email..." type="email" onChange={(e) => setUser(e.target.value)}
